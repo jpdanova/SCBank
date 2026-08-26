@@ -1,15 +1,21 @@
 ﻿using SCBank;
 
-var ContaDoArthur = new Conta("Arthur");
+var contaDoArthur = new Conta("Arthur");
 
-ContaDoArthur.Depositar(1000);
-ContaDoArthur.Sacar(500);
-ContaDoArthur.ImprimirExtrato();
+contaDoArthur.Depositar(1000);
+contaDoArthur.Sacar(500);
+contaDoArthur.ImprimirExtrato();
 
-var contadaMaria = new Conta("Maria");
-contadaMaria.Depositar(2000);
-contadaMaria.Sacar(500);
-contadaMaria.ImprimirExtrato();
+var contaDaMaria = new Conta("Maria");
+contaDaMaria.Depositar(2000);
+contaDaMaria.Sacar(500);
+contaDaMaria.ImprimirExtrato();
 
-ContaDoArthur.Depositar(5000);
-ContaDoArthur.ImprimirExtrato();
+contaDoArthur.Depositar(5000);
+contaDoArthur.ImprimirExtrato();
+
+var saldoContaDoArthur = contaDoArthur.ObterSaldo();
+Console.WriteLine($"Saldo da conta do Arthur: {saldoContaDoArthur:C}");
+
+var contaDoJoao = new Conta();
+contaDoJoao.Titular = "João";

@@ -3,6 +3,7 @@ namespace SCBank
     public class Conta
     {
         //construtor
+        public Conta(){}
         public Conta(string titular)
         {
             Titular = titular;
@@ -11,31 +12,47 @@ namespace SCBank
         //atributos
         public int Numero { get; set; }
         public string Titular { get; set; }
-        public decimal Saldo { get; set; }
+        private decimal saldo;
+
+        private List<Transacao> transacoes = new List<Transacao>();
 
         //métodos
         public void Depositar(decimal valor)
         {
-            Saldo += valor;
+            transacoes.Add(new Transacao(valor, "Depósito"));
+            saldo += valor;
         }
         public void Sacar(decimal valor)
         {
-            if (valor > Saldo)
+            if (valor > saldo)
             {
                 Console.WriteLine("Saldo insuficiente para saque.");
             }
-            else
+            Transacao saque = new Transacao(valor, "Saque");
+            transacoes.Add(saque);
+            saldo -= valor;
+        }
+            public decimal ObterSaldo()
+        {
+            return saldo;
+        }
+
+        public void ImprimirTransacoes()
+        {
+            Console.WriteLine("Transações:");
+            foreach (var transacao in transacoes)
             {
-                Saldo -= valor;
+                transacao.ImprimirTransacao();
             }
         }
         public void ImprimirExtrato()
         {
             Console.WriteLine("======================");
-
-            Console.WriteLine("Titular: " + Titular);
             Console.WriteLine("Número da conta: " + Numero);
-            Console.WriteLine("Saldo atual: " + Saldo);
+            Console.WriteLine("Titular: " + Titular);
+            Console.WriteLine($"Saldo atual: {saldo:C}");
+            ImprimirTransacoes();
+            Console.WriteLine("======================");
         }
     }
 }
