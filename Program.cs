@@ -19,3 +19,5 @@ Console.WriteLine($"Saldo da conta do Arthur: {saldoContaDoArthur:C}");
 
 var contaDoJoao = new Conta();
 contaDoJoao.Titular = "João";
+
+contaDoJoao.ImprimirExtrato();

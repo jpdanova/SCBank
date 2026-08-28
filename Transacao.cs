@@ -16,7 +16,7 @@ namespace SCBank
         //Metodos
         public void ImprimirTransacao()
         {
-            Console.WriteLine($"Data: {Data}, Tipo: {Tipo}, Valor: {Valor:C}");
+            Console.WriteLine($"Data: {Data}, Tipo: {Tipo}, Valor: {Valor:C2}");
         }
     }
 }

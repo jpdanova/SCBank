@@ -3,11 +3,13 @@ namespace SCBank
     public class Conta
     {
         //construtor
-        public Conta(){}
-        public Conta(string titular)
+        public Conta()
+        {
+            Numero = new Random().Next();
+        }
+        public Conta(string titular) : this()
         {
             Titular = titular;
-            Numero = new Random().Next();
         }
         //atributos
         public int Numero { get; set; }
@@ -50,7 +52,7 @@ namespace SCBank
             Console.WriteLine("======================");
             Console.WriteLine("Número da conta: " + Numero);
             Console.WriteLine("Titular: " + Titular);
-            Console.WriteLine($"Saldo atual: {saldo:C}");
+            Console.WriteLine($"Saldo atual: {saldo:C2}");
             ImprimirTransacoes();
             Console.WriteLine("======================");
         }
