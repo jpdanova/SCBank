@@ -42,9 +42,9 @@ namespace SCBank
         public void ImprimirTransacoes()
         {
             Console.WriteLine("Transações:");
-            foreach (var transacao in transacoes)
+            foreach (var transacaoObj in transacoes)
             {
-                transacao.ImprimirTransacao();
+                transacaoObj.ImprimirTransacao();
             }
         }
         public void ImprimirExtrato()
