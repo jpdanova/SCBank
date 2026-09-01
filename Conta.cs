@@ -2,21 +2,21 @@ namespace SCBank
 {
     public class Conta
     {
-        //construtor
-        public Conta(Cliente titular)
+        public Conta(Cliente titular, Funcionario gerente)
         {
             Titular = titular;
+            Gerente = gerente;
             Numero = new Random().Next();
         }
         public Cliente Titular { get; set; }
-        //atributos
+        public Funcionario Gerente { get; set; }
+        
         public int Numero { get; set; }
         
         private decimal saldo;
 
         private List<Transacao> transacoes = new List<Transacao>();
-
-        //métodos
+        
         public void Depositar(decimal valor)
         {
             transacoes.Add(new Transacao(valor, "Depósito"));

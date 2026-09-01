@@ -1,5 +1,9 @@
 ﻿using SCBank;
 
+Funcionario funcionarioObj = new Funcionario();
+funcionarioObj.Preencher();
+funcionarioObj.Imprimir();
+
 Cliente clienteObj = new Cliente();
 
 clienteObj.Preencher();
@@ -14,13 +18,13 @@ Cliente clienteObj2 = new Cliente();
 clienteObj2.Preencher();
 clienteObj2.Imprimir();
 
-var contaDoClienteObj = new Conta(clienteObj);
+var contaDoClienteObj = new Conta(clienteObj, funcionarioObj);
 
 contaDoClienteObj.Depositar(1000);
 contaDoClienteObj.Sacar(500);
 contaDoClienteObj.ImprimirExtrato();
 
-var contaDaMaria = new Conta(clienteObj2);
+var contaDaMaria = new Conta(clienteObj2, funcionarioObj);
 
 contaDaMaria.Depositar(2000);
 contaDaMaria.Sacar(500);
