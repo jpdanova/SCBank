@@ -3,17 +3,15 @@ namespace SCBank
     public class Conta
     {
         //construtor
-        public Conta()
-        {
-            Numero = new Random().Next();
-        }
-        public Conta(string titular) : this()
+        public Conta(Cliente titular)
         {
             Titular = titular;
+            Numero = new Random().Next();
         }
+        public Cliente Titular { get; set; }
         //atributos
         public int Numero { get; set; }
-        public string Titular { get; set; }
+        
         private decimal saldo;
 
         private List<Transacao> transacoes = new List<Transacao>();
@@ -49,9 +47,13 @@ namespace SCBank
         }
         public void ImprimirExtrato()
         {
+            Titular.Imprimir();
+            Console.WriteLine("======================");
+            Console.WriteLine("Extrato da conta:");
             Console.WriteLine("======================");
             Console.WriteLine("Número da conta: " + Numero);
-            Console.WriteLine("Titular: " + Titular);
+            Console.WriteLine("Titular: " + Titular.Nome);
+            Console.WriteLine("CPF: " + Titular.Cpf);
             Console.WriteLine($"Saldo atual: {saldo:C2}");
             ImprimirTransacoes();
             Console.WriteLine("======================");

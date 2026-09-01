@@ -14,25 +14,20 @@ Cliente clienteObj2 = new Cliente();
 clienteObj2.Preencher();
 clienteObj2.Imprimir();
 
-var contaDoArthur = new Conta("Arthur");
+var contaDoClienteObj = new Conta(clienteObj);
 
-contaDoArthur.Depositar(1000);
-contaDoArthur.Sacar(500);
-contaDoArthur.ImprimirExtrato();
+contaDoClienteObj.Depositar(1000);
+contaDoClienteObj.Sacar(500);
+contaDoClienteObj.ImprimirExtrato();
 
-var contaDaMaria = new Conta("Maria");
+var contaDaMaria = new Conta(clienteObj2);
 
 contaDaMaria.Depositar(2000);
 contaDaMaria.Sacar(500);
 contaDaMaria.ImprimirExtrato();
 
-contaDoArthur.Depositar(5000);
-contaDoArthur.ImprimirExtrato();
+contaDoClienteObj.Depositar(5000);
+contaDoClienteObj.ImprimirExtrato();
 
-var saldoContaDoArthur = contaDoArthur.ObterSaldo();
-Console.WriteLine($"Saldo da conta do Arthur: {saldoContaDoArthur:C}");
-
-var contaDoJoao = new Conta();
-
-contaDoJoao.Titular = "João";
-contaDoJoao.ImprimirExtrato();
+var saldoContaDoClienteObj = contaDoClienteObj.ObterSaldo();
+Console.WriteLine($"Saldo da conta do {contaDoClienteObj.Titular.Nome}: {saldoContaDoClienteObj:C}");
