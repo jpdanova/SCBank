@@ -73,9 +73,8 @@ namespace SCBank
             return cpf.EndsWith(digito);
         }
 
-        public abstract void Preencher();
-        public abstract void Imprimir();
-        protected void PreencherPai()
+
+        public virtual void Preencher()
         {
             Console.Write("Digite o nome: ");
             Nome = Console.ReadLine();
@@ -102,7 +101,7 @@ namespace SCBank
             }
         }
 
-        protected void ImprimirPai()
+        public virtual void Imprimir()
         {
             Console.WriteLine("Nome: " + Nome);
             Console.WriteLine("Cpf: " + Cpf);

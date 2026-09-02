@@ -7,14 +7,14 @@ namespace SCBank
         public override void Preencher()
         {
             Console.WriteLine("Cadastro de Cliente");
-            PreencherPai();
+            base.Preencher();
             Console.WriteLine("Digite o endereço: ");
             End = Console.ReadLine();
         }
 
         public override void Imprimir()
         {
-            ImprimirPai();
+            base.Imprimir();
             Console.WriteLine("Endereco: " + End);
         }
     }

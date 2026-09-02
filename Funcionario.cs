@@ -14,8 +14,8 @@ namespace SCBank
 
         public override void Preencher()
         {
+            base.Preencher();
             Console.WriteLine("Cadastro de Funcionário");
-            PreencherPai();
             Console.Write("Digite a função: ");
             Funcao = Console.ReadLine();
 
@@ -23,7 +23,7 @@ namespace SCBank
 
         public override void Imprimir()
         {
-            ImprimirPai();
+            base.Imprimir();
             Console.WriteLine("Matrícula: " + NumeroMatricula);
             Console.WriteLine("Função: " + Funcao);
         }
