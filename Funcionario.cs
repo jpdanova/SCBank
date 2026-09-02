@@ -11,6 +11,13 @@ namespace SCBank
             NumeroMatricula = new Random().Next();
         }
 
+        public static Funcionario CriarEPreencherFuncionario()
+        {
+            Funcionario funcionarioObj = new Funcionario();
+            funcionarioObj.Preencher();
+            return funcionarioObj;
+        }
+
 
         public override void Preencher()
         {

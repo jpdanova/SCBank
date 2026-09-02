@@ -4,6 +4,13 @@ namespace SCBank
     {
         public string End { get; set; }
 
+        public static Cliente CriarEPreencherCliente()
+        {
+            Cliente clienteObj = new Cliente();
+            clienteObj.Preencher();
+            return clienteObj;
+        }
+
         public override void Preencher()
         {
             Console.WriteLine("Cadastro de Cliente");
